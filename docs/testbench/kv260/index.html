@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://smartlock.musebox.it/testbench/kv260/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Kria KV260 - SmartLock Design Reference</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Kria KV260";
+        var mkdocs_page_input_path = "testbench/kv260.md";
+        var mkdocs_page_url = "/testbench/kv260/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> SmartLock Design Reference
+        </a>
+        <div class="version">
+          v2.0.4
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project-description/">Project Description</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../hw-sw-requirements/">Hardware & Software requirements</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Run the examples</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../examples/how-to-run/">How to run the demo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../examples/running-on-kria-kv260/">Running on Kria KV260</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../examples/running-on-arty-z7/">Running on Arty Z7-20</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Code analysis</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../code-analysis/kria-kv260/">Kria KV260</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../code-analysis/arty-z7/">Arty Z7-20</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Testbench</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Kria KV260</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">SmartLock Design Reference</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Testbench</li>
+      <li class="breadcrumb-item active">Kria KV260</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="kria-kv260-testbench">Kria KV260 Testbench</h1>
+<p>This is a guide on how to validate the FaceRecognition AI model on the KV260 board.
+To run the validation testbench you need to have:</p>
+<ul>
+<li>Kria KV260 board;</li>
+<li>Ubuntu 22.04 image (username: <code>ubuntu</code>, password: <code>makarenalabs</code>);</li>
+<li>MuseBox License <a href="mailto:staff@makarenalabs.com">@MakarenaLabs</a>;</li>
+</ul>
+<p>The MuseBox License is really important, without it you won't be able to run the testbench. In order to obtain the license, you need to request the node locker license.
+The license is valid for a specific board, so you cannot use the license on a different node.
+For the license request, you need to create the license request file. To do that, simply run this command:</p>
+<pre><code class="language-bash">sudo license_request
+</code></pre>
+<p>This command generates the file <code>license_request.req</code> in the path <code>/usr/local</code>. You need to send to us the file via email at <a href="mailto:staff@makarenalabs.com">staff@makarenalabs.com</a> with the subject <em>MuseBox License request</em> and with the message body <em>I accept your evaluation license agreement</em>. Our internal system will check if the email is associated to a valid customer, then, according to your signed contract, the system will respond to you with the license file, called <code>license.lic</code>. When you receive the license file, you need to place the file in this path: <code>/usr/local/bin</code>.</p>
+<p>Once you have your license, you should go to a browser and go to <code>http://&lt;kria_board_ip&gt;:9090</code>. The password to insert is <code>xilinx</code>. Go inside the MuseBox folder and open <code>validate_face_recognition.ipynb</code>. Now you can run all the cells and run the testbench.
+When you run the first cell:</p>
+<pre><code class="language-python">import cv2
+import os
+import numpy as np
+from FaceRecognitionSL import FaceRecognition
+</code></pre>
+<p>you should see as output:</p>
+<pre><code class="language-python">Checking license...
+License ok
+</code></pre>
+<p>On the other hand, if you get any error and the kernel seems to die, it may be an error with the license.</p>
+<p>You can change the maximum length of the images to run the validation on, by changing the variable:</p>
+<pre><code class="language-python">max_len_images = 1000
+</code></pre>
+<p>and you can change the Face Recognition similarity threshold by changing the variable:</p>
+<pre><code class="language-python">threshold = 0.12
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../code-analysis/arty-z7/" class="btn btn-neutral float-left" title="Arty Z7-20"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../code-analysis/arty-z7/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

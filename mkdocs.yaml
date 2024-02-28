@@ -1,0 +1,21 @@
+site_name: SmartLock Design Reference
+site_url: https://smartlock.musebox.it/
+site_dir: docs
+docs_dir: markdown
+nav:
+        - Introduction:
+                - Home: index.md
+                - Project Description: project-description.md
+                - Hardware & Software requirements: hw-sw-requirements.md
+        - Run the examples: 
+                - How to run the demo: examples/how-to-run.md
+                - Running on Kria KV260: examples/running-on-kria-kv260.md
+                - Running on Arty Z7-20: examples/running-on-arty-z7.md
+        - Code analysis:
+                - Kria KV260: code-analysis/kria-kv260.md
+                - Arty Z7-20: code-analysis/arty-z7.md
+        - Testbench:
+                - Kria KV260: testbench/kv260.md
+theme: readthedocs
+extra:
+  version: v2.0.4

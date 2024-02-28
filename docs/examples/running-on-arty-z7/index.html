@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://smartlock.musebox.it/examples/running-on-arty-z7/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Running on Arty Z7-20 - SmartLock Design Reference</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Running on Arty Z7-20";
+        var mkdocs_page_input_path = "examples/running-on-arty-z7.md";
+        var mkdocs_page_url = "/examples/running-on-arty-z7/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> SmartLock Design Reference
+        </a>
+        <div class="version">
+          v2.0.4
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project-description/">Project Description</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../hw-sw-requirements/">Hardware & Software requirements</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Run the examples</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../how-to-run/">How to run the demo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../running-on-kria-kv260/">Running on Kria KV260</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Running on Arty Z7-20</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-board">Setting up the board</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#image-file-installation">Image File Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#populate-faces-database">Populate Faces Database</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#start-recognition-process">Start recognition process</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#start-3d-software-on-your-workstation">Start 3D software on your Workstation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#linux-version">Linux Version</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#windows-version">Windows Version</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Code analysis</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../code-analysis/kria-kv260/">Kria KV260</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../code-analysis/arty-z7/">Arty Z7-20</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Testbench</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../testbench/kv260/">Kria KV260</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">SmartLock Design Reference</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Run the examples</li>
+      <li class="breadcrumb-item active">Running on Arty Z7-20</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="running-the-example-on-the-arty-z7-20-board">Running the example on the Arty Z7-20 board</h1>
+<div style="width: 100%;">
+        <img src="https://www.xilinx.com/content/dam/xilinx/imgs/prime/IMG_6224%20-%20ARTY-Z7%20-%20Obl%20-%20600.png" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Arty Z7-20">
+        <p style="text-align: center; font-style: italic">Fig. 1 - Arty Z7-20</p>
+</div>
+
+<h2 id="setting-up-the-board">Setting up the board</h2>
+<p>The demo, in addition to the miscellaneous listed in the <a href="../how-to-run/">How to run the demo</a> page, is composed by:</p>
+<ol>
+<li>Zynq7000 board (<a href="https://www.xilinx.com/products/boards-and-kits/1-pdb0q2.html">Arty Z7-20 Board</a>, using the Zynq7020);</li>
+<li>Linux Workstation;</li>
+<li>MakarenaLabs evaluation image file for Arty (please write to <a href="mailto:staff@makarenalabs.com">staff@makarenalabs.com</a> to get the access);</li>
+<li>A MicroSD card <em>greater than or equal to</em> 16GB;</li>
+</ol>
+<h2 id="image-file-installation">Image File Installation</h2>
+<ol>
+<li>Download the MakarenaLabs image and, if it is necessary, merge the downloaded image files into a single image file using 7Zip.</li>
+<li>
+<p>Verify the SHA-256 hash of the image file. This will ensure that no errors occurred in the transmission and merge of the files. If your system is Windows 11:</p>
+<ol>
+<li>Click <em>Search</em> and run <code>powershell</code>. (Note: <code>cmd</code> will not work).</li>
+<li>Navigate to the directory containing the image file.</li>
+<li>Enter <code>Get-FileHash &lt;filename&gt;</code>.</li>
+<li>Wait 15 to 30 seconds.</li>
+<li>The hash value will appear.</li>
+</ol>
+</li>
+<li>
+<p>Flash the MakarenaLabs image file to the microSD card with Balena Etcher (or another similar one). Please note that the image must be written to the microSD card as a boot.image.</p>
+</li>
+</ol>
+<p>Next, connect the Arty to your router with an Ethernet cable. The board is configured to boot with DHCP, thus it should be dynamically assigned an IP by your router. Determine the IP addresses of your Arty board and also your workstation, using your router's management software. Some routers make the software available by typing <code>192.168.1.1</code> in your web browser. If you the router's management software is not accessible or available, it has also a static IP address (<code>192.168.2.99</code>) you can use to connect to. In this case, you have to be in the same subnetwork of the Arty Z7, so set your network adapter properly. The addresess are needed to run the demo. To power the Arty simply connect a micro-USB cable from the board to your PC or to a USB power adapter.</p>
+<h2 id="populate-faces-database">Populate Faces Database</h2>
+<ol>
+<li>
+<p>Connect the 2D USB webcam to the Arty z7, and the 3D camera to a USB 3.0 port of your PC.</p>
+</li>
+<li>
+<p>The first step to run the demo (optional, but strongly suggested for testing) is to add your face to the database.</p>
+</li>
+<li>
+<p>Check the Arty z7 IP address, then open your browser and tap <code>[ip address of board]:9090</code> (i.e. <code>192.168.2.99:9090</code>). This will open a Jupyter Notebooks environment.</p>
+</li>
+<li>
+<p>Navigate to the folder <code>smart-lock/driver</code>. Here you will find a notebook called <code>takeAPic</code>, open it.</p>
+</li>
+<li>
+<p>Place in front of the USB camera of the setup, and then tap three times <code>Shift+Enter</code> to executes the three cells of the notebook.</p>
+</li>
+<li>
+<p>Stay in front of the camera for 10-20s, as the startup of the Notebook requires some time.</p>
+</li>
+<li>
+<p>After taking the pic the Notebook will ask for the filename to save in the database, then press enter to save it.</p>
+</li>
+<li>
+<p>Write the name but do not insert any extension in the name (i.e. <em>guglielmo</em> and not <em>guglielmo.jpg</em>).</p>
+</li>
+</ol>
+<p>At this point check inside the folder named <code>database</code> to verify that the photo of your face exists with the name you assigned to it. At this point you can close the Web Tab.</p>
+<h2 id="start-recognition-process">Start recognition process</h2>
+<ol>
+<li>
+<p>Open a terminal and connect to the board via SSH. To do so you need to tap into the terminal:</p>
+<pre><code>ssh xilinx@[ip address of Arty]
+</code></pre>
+<p>It will ask you the password. The password is <code>xilinx</code>.</p>
+</li>
+<li>
+<p>To navigate to the folder where the script is placed, execute:</p>
+<pre><code>cd jupyter_notebooks/smart-lock/driver
+</code></pre>
+</li>
+<li>
+<p>To start the routine, you must run the next step with sudo privileges. So:</p>
+<pre><code>sudo /usr/local/share/pynq-venv/bin/python smart_lock_arty.py --ip [your_workstation's_IP] --camera_index -1
+</code></pre>
+<p>You must set the IP address of your workstation and the camera index value, which is <code>-1</code> so the OS is able to choose the camera index independently.
+This will start the routine of smart lock which is now waiting to have input fed from your PC. The python script is ready when the log <em>Start Smart Lock Routine</em> appears.</p>
+</li>
+</ol>
+<h2 id="start-3d-software-on-your-workstation">Start 3D software on your Workstation</h2>
+<p>First of all, you must configure the tool inside your workstation. Only the steps for a Linux environment are provided, because the Windows version is not currently available.</p>
+<h3 id="linux-version">Linux Version</h3>
+<p>Go to the path where you have downloaded the libroyal SDK provided by MakarenaLabs (please contact us at staff@makarenalabs.com if you do not have the SDK) and go to the build folder:</p>
+<pre><code class="language-bash">cd [/path/to/your/libroyale]/samples/to_arty_7z/build
+</code></pre>
+<p>Please be sure to have these prerequisites to continue (we are currently refer to an Ubuntu distro, please check the right commands for your platform):</p>
+<ul>
+<li><a href="https://opencv.org/">OpenCV</a></li>
+<li><a href="https://pointclouds.org/">Point Cloud Libraries</a></li>
+<li><a href="https://zeromq.org/">ZeroMQ</a></li>
+</ul>
+<p>You can install them running:</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install -y libopencv-dev libpcl-dev libzmq3-dev
+</code></pre>
+<p>If all the requirements are met, then you can proceed to configure the tool with:</p>
+<pre><code class="language-bash">cmake ..
+make -j8
+</code></pre>
+<p>At this time, you are able to start the 3D software in your workstation. So, you can start the 3D software running</p>
+<pre><code class="language-bash">./smart_lock_sender 192.168.2.99
+</code></pre>
+<p>Now the routine of SmartLock should start and print out status messages to Arty console which describes what is happening and whether the Arty and Workstation are exchanging messages.</p>
+<h3 id="windows-version">Windows Version</h3>
+<p>Currently not supported</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../running-on-kria-kv260/" class="btn btn-neutral float-left" title="Running on Kria KV260"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../code-analysis/kria-kv260/" class="btn btn-neutral float-right" title="Kria KV260">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../running-on-kria-kv260/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../code-analysis/kria-kv260/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

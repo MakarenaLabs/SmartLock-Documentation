@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://smartlock.musebox.it/project-description/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Project Description - SmartLock Design Reference</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Project Description";
+        var mkdocs_page_input_path = "project-description.md";
+        var mkdocs_page_url = "/project-description/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> SmartLock Design Reference
+        </a>
+        <div class="version">
+          v2.0.4
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Project Description</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#architectural-schematic">Architectural Schematic</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2d-branch">2D Branch</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2d-apis">2D APIs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#introduction_1">Introduction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#general-musebox-structure-for-aiml-tasks-related-to-face-analysis">General Musebox Structure for AI/ML Tasks related to Face Analysis</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#face-detection">Face Detection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#face-recognition">Face Recognition</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#face-landmark">Face Landmark</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3d-branch">3D Branch</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3d-apis">3D APIs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#introduction_2">Introduction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#class-name-downsampler">Class name: Downsampler</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#class-name-segmenter">Class name: Segmenter</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#class-name-feature-extractor-3d">Class name: Feature Extractor 3D</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hw-sw-requirements/">Hardware & Software requirements</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Run the examples</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../examples/how-to-run/">How to run the demo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../examples/running-on-kria-kv260/">Running on Kria KV260</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../examples/running-on-arty-z7/">Running on Arty Z7-20</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Code analysis</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../code-analysis/kria-kv260/">Kria KV260</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../code-analysis/arty-z7/">Arty Z7-20</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Testbench</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../testbench/kv260/">Kria KV260</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">SmartLock Design Reference</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Introduction</li>
+      <li class="breadcrumb-item active">Project Description</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="smartlock-design-reference">SmartLock Design Reference</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The Machine Learning solution uses a combination of 2D and 3D information processing to identify a specific human who wishes to access a restricted area.</p>
+<h2 id="architectural-schematic">Architectural Schematic</h2>
+<p>The base architecture of the SmartLock is briefly described in following image:</p>
+<div style="width: 100%;">
+    <img src="../images/arch_struct.png" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="SmartLock Design Reference Architecture">
+    <p style="text-align: center; font-style: italic">Fig. 1 - SmartLock Design Reference Architecture</p>
+</div>
+
+<p>The system is based on a Machine Learning engine which uses AI models to extract features from both the 2D and 3D acquisition data. 
+Both branches (2D and 3D) have their own dedicated AI model for feature extraction. The extracted information is then fused together in order to compute the authorization process. Below is a brief description of the two branches.</p>
+<h2 id="2d-branch">2D Branch</h2>
+<p>This branch computes two different AI models in a cascade mode, first Face Detection and then Face Recognition. 
+Face Detection is an AI model which analyzes an image from a video source. From this image are extracted, if present, the bounding boxes of the faces. The bounding boxes are a cropped version of the original image, containing only the faces, if present.
+Face Recognition is an AI model which receives the bounding box-cropped image of a face as input and returns a description of the face as output. The Face Recognition AI model is used to determine if the person in front of the SmartLock can be identified as someone who has been saved in the database as an authorized user.</p>
+<h2 id="2d-apis">2D APIs</h2>
+<h3 id="introduction_1">Introduction</h3>
+<p>Those APIs are used to recognize the person who is standing in front of the lock. Those APIs are based on server-client modality which consists in asking a particular machine learning task. Those APIs are based on MuseBox. MuseBox is a Machine Learning framework developed by MakarenaLabs to infer AI models on FPGAs. </p>
+<p>The 2D branch of the SmartLock process performs two operations: </p>
+<ol>
+<li>Face Detection</li>
+<li>Face Recognition</li>
+</ol>
+<p>Face Detection consists in understanding whether a human face is present in a camera frame. If so, the frame is then cropped to the face. Face Recognition consists in "describing" the cropped face obtained before. The result of the description is used to label whether the person looking at the camera is present in the database of authorized faces.</p>
+<h3 id="general-musebox-structure-for-aiml-tasks-related-to-face-analysis">General Musebox Structure for AI/ML Tasks related to Face Analysis</h3>
+<p>The MuseBox Server listens in localhost (127.0.0.1) at port 9696.
+In ZMQ socket binding, the Client will bind at this address to send data to MuseBox Server: <code>tcp://*:9696</code></p>
+<p>All the APIs are in JSON format, and have the same structure. The structure is the following:</p>
+<pre><code>{
+    &quot;topic&quot;: &lt;string&gt;,
+    &quot;only_face&quot;: &lt;bool&gt;,
+    &quot;image&quot;/&quot;input&quot;: &lt;base64 image&gt;/double array,
+    &quot;publisherQueue&quot;: &lt;string&gt;
+}
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>topic</code>: is the name of the Machine Learning task</li>
+<li><code>image</code>: is the OpenCV image in base64 format (string encoded in UTF8)</li>
+<li><code>publisherQueue</code>: is the address where the Client expects to receive the response</li>
+<li><code>only_face</code>: (optional) if you want to execute only the selected task and not the dependent tasks. For example: if you want to execute the face recognition task, you need to execute before that the face detection for extracting the sub-image that contains the face of the person that you want to recognize; with <code>only_face: true</code> you are sure that the passed image contains only the cropped face, meanwhile without the field <code>only_face</code>, MuseBox Server executes face detection and face recognition.</li>
+</ul>
+<h3 id="face-detection">Face Detection</h3>
+<p>It detects the faces in a scene up to 32×32 pixel.</p>
+<p>Request from Client:</p>
+<pre><code>&quot;topic&quot;: &quot;FaceDetection&quot;
+&quot;image&quot;: &quot;base64 image&quot;
+</code></pre>
+<p>Response from Server:</p>
+<pre><code>{
+    &quot;data&quot;:
+        [
+            {
+                &quot;boundingBox&quot;:
+                    {
+                        &quot;height&quot;: &lt;int&gt;,
+                        &quot;width&quot;: &lt;int&gt;,
+                        &quot;x&quot;: &lt;int&gt;,
+                        &quot;y&quot;: &lt;int&gt;
+                    }
+            }
+        ],
+}
+</code></pre>
+<ul>
+<li><code>boundingBox</code> is the bounding boxes of the task, according to OpenCV format (from top-left to bottom-right)</li>
+</ul>
+<h3 id="face-recognition">Face Recognition</h3>
+<p>Given a face bounding box and a database of faces, it recognizes a face in a scene.</p>
+<p>Request from Client:</p>
+<pre><code>&quot;topic&quot;: &quot;FaceRecognition&quot;
+&quot;image&quot;: &quot;base64 image&quot;
+&quot;only_face&quot;?: true
+</code></pre>
+<p>Response from Server:</p>
+<pre><code>{
+    &quot;data&quot;:
+        {
+            &quot;prediction&quot;: &lt;string&gt;
+        }
+}
+</code></pre>
+<ul>
+<li><code>prediction</code> corresponds to the name of the person</li>
+</ul>
+<h3 id="face-landmark">Face Landmark</h3>
+<p>Given a face bounding box, it extracts the 98 relevant points of a face.</p>
+<p>Request from Client:</p>
+<pre><code class="language-json">&quot;topic&quot;: &quot;FaceLandmark&quot;
+&quot;image&quot;: &quot;base64 image&quot;
+&quot;only_face&quot;?: true
+</code></pre>
+<p>Response from Server:</p>
+<pre><code class="language-json">{
+    &quot;data&quot;:
+        {
+            &quot;prediction&quot;: [196 float]
+        }
+}
+</code></pre>
+<ul>
+<li><code>prediction</code> corresponds to (x,y) couples for face landmark points</li>
+</ul>
+<h2 id="3d-branch">3D Branch</h2>
+<p>This branch is used to avoid efforts to spoof the 2D system. The function of this branch is to determine whether the 3D mapping of the person in front of the SmartLock is an human face. This rejects efforts to use images, photos, or other methods which can otherwise be accepted and recognized by the 2D system.</p>
+<h2 id="3d-apis">3D APIs</h2>
+<h3 id="introduction_2">Introduction</h3>
+<p>As seen in the introduction, the architecture is divided in two branches. One of the two branches consists of the analysis and feature extraction of the 3D information of the system. The 3D information is extremely useful to understand the geometry and composition of a real 3D object. We exploit these properties to analyze whether a face lies in front of the camera. Why do we need to add this step? If we have only the 2D branch and our photo saved in the database, someone who wants to defeat the lock could simply show the camera a photo of an authorized individual (e.g., taken from a social network) and enter. Having a branch which analyzes that a real human face is in front of the camera prevents such spoofing techniques.</p>
+<p>To do this process we use a representation of the 3D information called Point Cloud. This is a data format which creates a cloud of points of the object that we want to represent. An example could be found in the below image:</p>
+<div style="width: 100%;">
+    <img src="../images/teapot.png" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Tea pot pc">
+    <p style="text-align: center; font-style: italic">Fig. 1 - Example of Point Cloud</p>
+</div>
+
+<p>In our setup we need 3 types of APIs to manipulate the Point Cloud obtained by the depth sensor. Those APIs are based on the BSD-licensed <a href="https://pointclouds.org/">Point Cloud Library</a>.</p>
+<p>The first type of API is a point cloud downsampler, which reduces the computational effort, of subsequent steps. The downsampler reduces the number of points in the cloud while maintaining its geometrical properties (so a face remains a face). With less points it is easier to manipulate the Point Cloud and extract information and features out of it. We will refer to it as <strong>Downsampler</strong>.</p>
+<p>The second type of API which we need is something which can extract different components out of a Point Cloud. Extracting this subgroup s of points is a process called segmentation and is used to isolate different object in a Point Cloud. This process is carried out by grouping points that are close one to each other and discard the ones that are far away, given a certain distance threshold. We will use the <strong>Segmenter</strong> to isolate the face of the person from the background points obtained by the acquisition of the 3D sensor. We will suppose in our system the face to be in front of the camera. We refer to the object which does this operation as <strong>Segmenter</strong>.</p>
+<p>The third type of API is one which extracts features out of the Point Cloud. We refer to this as <strong>Feature Extractor 3D</strong>. This type of API is used to compute a vector of descriptors of our Point Cloud. We are going to compare these vectors between Point Clouds to see how much two Point Clouds are similar. In our case, we will categorize if the Point Cloud is sufficiently similar to a human face before proceeding with the unlocking process.</p>
+<p>The basic algorithm for the 3D branch can be then summarized in these three steps:</p>
+<ol>
+<li>Check if the Point Cloud has too many points, and if so, downsample using the <strong>Downsampler</strong>.</li>
+<li>Isolate the face from point cloud, using the <strong>Segmenter</strong>.</li>
+<li>Extract the features out of the Point Cloud and check how close they resemble a face using the <strong>3D Feature Extractor</strong>.</li>
+</ol>
+<h3 id="class-name-downsampler">Class name: <code>Downsampler</code></h3>
+<p>This object is used to voxelize the point cloud. The voxelization process results in a less dense 3D representation, where the points are grouped into voxels. The voxels are computed by group of points that are close in space. In our intent we will represent more points with a single voxel, thus resulting in an actual downsampling operation for the Point Cloud. The voxels are computed by grouping points in "leaves" (can be seen as cubes) with modifiable X-Y-Z axis value to enlarge/stretch them.</p>
+<pre><code class="language-c++">downsampler(float leaf_size_x, float leaf_size_y, float leaf_size_z);
+</code></pre>
+<p>Constructor of the class</p>
+<ul>
+<li><strong>Function params</strong>:<ul>
+<li><code>leaf_size_x</code>: Size on the X axis of the voxel</li>
+<li><code>leaf_size_y</code>: Size on the Y axis of the voxel</li>
+<li><code>leaf_size_z</code>: Size on the Z axis of the voxel</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">pcl::PointCloud&lt;pcl::PointXYZ&gt; compute_downsampling(pcl::PointCloud&lt;pcl::PointXYZ&gt;::Ptr cloud);
+</code></pre>
+<p>Computes the voxelization on the point cloud and returns the downsampled cloud. </p>
+<ul>
+<li><strong>Function params</strong>:<ul>
+<li><code>cloud</code>: pointer to the point cloud we want to downsample.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">void set_leaf_size_x(float x);
+</code></pre>
+<p>Set the value of the X axis of the voxel. Overwrites what has been set during the construction of the object.</p>
+<ul>
+<li><strong>Function params</strong>:<ul>
+<li><code>x</code>: pointer to the point cloud we want to downsample.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">void set_leaf_size_y(float y);
+</code></pre>
+<p>Set the value of the Y axis of the voxel. Overwrites what has been set during the construction of the object.</p>
+<ul>
+<li><strong>Function params</strong>:<ul>
+<li><code>y</code>: pointer to the point cloud we want to downsample.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">void set_leaf_size_z(float z);
+</code></pre>
+<p>Set the value of the Z axis of the voxel. Overwrites what has been set during the construction of the object.</p>
+<ul>
+<li><strong>Function params</strong>:<ul>
+<li><code>z</code>: pointer to the point cloud we want to downsample.</li>
+</ul>
+</li>
+</ul>
+<h3 id="class-name-segmenter">Class name: <code>Segmenter</code></h3>
+<p>This class implements a Euclidean Segmenter. This Segmenter divides the Point Cloud chosen into subgroups. The metric chosen to create the subgroups is the Euclidean distance. Out of this subgroups we will return just the biggest. The logic behind this choice is that the face is placed in front of the camera, and thus most of the points represent the face itself. If other points are present in the background they are not part of the face and can be discarded.</p>
+<pre><code class="language-c++">segmenter();
+</code></pre>
+<p>Constructor of the class</p>
+<pre><code class="language-c++">pcl::PointCloud&lt;pcl::PointXYZ&gt; clustering(pcl::PointCloud&lt;pcl::PointXYZ&gt;::Ptr cloud);
+</code></pre>
+<p>This methods accepts in input a Point Cloud, segments it and return the biggest of the subgroup created.</p>
+<ul>
+<li><strong>Function params</strong>:<ul>
+<li><code>cloud</code>: The Point Cloud to segment.</li>
+</ul>
+</li>
+</ul>
+<p>On the Zynq7000, the Python version of this API is available, and not the C++ implementation. Reported below is the signature, as the name of the functions and their application do not diverge with respect to what has been already explained.</p>
+<p>To import the API just tap:</p>
+<pre><code class="language-python">import musebox_pcl_bindings_segmenter as ec
+</code></pre>
+<p>And then, to use it tap:</p>
+<pre><code class="language-python">ec.euclidean_clustering(point_cloud)
+</code></pre>
+<ul>
+<li><strong>Functions Params</strong>:<ul>
+<li><code>point_cloud</code>: A Nx3 shaped numpy array which represents our Point Cloud</li>
+</ul>
+</li>
+</ul>
+<h3 id="class-name-feature-extractor-3d">Class name: <code>Feature Extractor 3D</code></h3>
+<p>This object is used to compute the descriptors of the point cloud. The descriptors are dependent on the geometry of the point cloud itself. In our application this results in checking the resemblance of this group of points with a face.</p>
+<pre><code class="language-c++">feature_extractor_3d(metrics feature_comparison_metric);
+</code></pre>
+<p>Constructor of the class</p>
+<ul>
+<li><strong>Function params</strong>:<ul>
+<li><code>feature_comparison_metric</code>: How the loss of the features extracted is computed. Only the L2 loss is supported.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">std::tuple&lt; float, pcl::PointCloud&lt;pcl::VFHSignature308&gt; &gt; get_features(pcl::PointCloud&lt;pcl::PointXYZ&gt;::Ptr cloud1, pcl::PointCloud&lt;pcl::PointXYZ&gt;::Ptr cloud2);
+</code></pre>
+<p>Constructor of the class</p>
+<ul>
+<li><strong>Function params</strong>:<ul>
+<li><code>cloud1</code>: First Point Cloud in input. In this case, it represents the features of the face in front of the 3D camera;</li>
+<li><code>cloud2</code>: Cloud to be compared with cloud1.</li>
+</ul>
+</li>
+</ul>
+<p>On the Zynq7000, the Python version of this API is available, and not the C++ implementation. Reported below is the signature, as the name of the functions and their application do not diverge with respect to what has been already explained.</p>
+<p>To import the API just tap:</p>
+<pre><code class="language-python">import musebox_pcl_bindings_feature_extractor as fe3d
+</code></pre>
+<p>And then, to use it tap:</p>
+<pre><code class="language-python">fe3d.feature_extractor_3d(segmented_point_cloud, face_point_cloud)
+</code></pre>
+<ul>
+<li><strong>Functions Params</strong>:<ul>
+<li><code>segmented_point_cloud</code>: A Nx3 shaped numpy array which represents our Point Cloud (obtained by the segmenter) </li>
+<li><code>face_point_cloud</code>: A Nx3 shaped numpy array which represents our face Point Cloud</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../hw-sw-requirements/" class="btn btn-neutral float-right" title="Hardware & Software requirements">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../hw-sw-requirements/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

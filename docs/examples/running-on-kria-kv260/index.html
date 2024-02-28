@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://smartlock.musebox.it/examples/running-on-kria-kv260/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Running on Kria KV260 - SmartLock Design Reference</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Running on Kria KV260";
+        var mkdocs_page_input_path = "examples/running-on-kria-kv260.md";
+        var mkdocs_page_url = "/examples/running-on-kria-kv260/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> SmartLock Design Reference
+        </a>
+        <div class="version">
+          v2.0.4
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project-description/">Project Description</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../hw-sw-requirements/">Hardware & Software requirements</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Run the examples</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../how-to-run/">How to run the demo</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Running on Kria KV260</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-board">Setting up the board</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#board-connection">Board connection</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ethernet-connection">Ethernet connection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#standalone-connection">Standalone connection</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#image-file-installation">Image File Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#start-the-musebox-server-process">Start the MuseBox Server process</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#populate-faces-database">Populate Faces Database</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#execution">Execution</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#start-demo-software">Start demo software</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../running-on-arty-z7/">Running on Arty Z7-20</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Code analysis</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../code-analysis/kria-kv260/">Kria KV260</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../code-analysis/arty-z7/">Arty Z7-20</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Testbench</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../testbench/kv260/">Kria KV260</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">SmartLock Design Reference</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Run the examples</li>
+      <li class="breadcrumb-item active">Running on Kria KV260</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="running-the-example-on-the-kria-kv260-board">Running the example on the Kria KV260 board</h1>
+<div style="width: 100%;">
+    <img src="https://www.xilinx.com/content/dam/xilinx/imgs/products/som/som-kv260-4.png" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Kria KV260">
+    <p style="text-align: center; font-style: italic">Fig. 1 - Kria KV260</p>
+</div>
+
+<h2 id="setting-up-the-board">Setting up the board</h2>
+<p>The demo, in addition to the miscellaneous listed in the <a href="../how-to-run/">How to run the demo</a> page, is composed by:</p>
+<ol>
+<li>Face recognition image file, available from MakarenaLabs (please write to <a href="mailto:staff@makarenalabs.com">staff@makarenalabs.com</a> to get the access);</li>
+<li><a href="https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html">Kria KV260 Board</a>;</li>
+<li>A MicroSD card <em>greater than or equal to</em> 16GB;</li>
+</ol>
+<p>If you are running on a Windows environment, please check if you have all the software requirements needed and described in the <a href="../../hw-sw-requirements/#windows-requirements">Hardware &amp; Software requirements</a> chapter.</p>
+<h2 id="board-connection">Board connection</h2>
+<p>For this demo there are two connection ways:</p>
+<ul>
+<li>With an ethernet cable using your workstation (all hardware requirements should be satisfied);</li>
+<li>Directly using an external monitor. In this case, as it is written in the <a href="../../hw-sw-requirements/">hardware and software requirements chapter</a>) you need also:<ul>
+<li>Full-HD monitor (1920x1080);</li>
+<li>HDMI cable;</li>
+<li>Keyboard and mouse kit;</li>
+</ul>
+</li>
+</ul>
+<p>When the Kria boots, please check the three LEDs near the fan. The center light should blink and the other two lights should be solid when the board has successfully booted.</p>
+<div style="width: 100%;">
+    <img src="../../images/kria-leds.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Kria successfully booted leds">
+    <p style="text-align: center; font-style: italic">Fig. 1 - Kria KV260 booting LEDs</p>
+</div>
+
+<h3 id="ethernet-connection">Ethernet connection</h3>
+<p>If you have chosen to use your local setup to connect to the board, start connecting via ethernet cable the Kria to your router. The board is set with DHCP, thus it should be dynamically assigned an IP from the router. Check the address of your board and PC on your router manager software. Those addresses are necessary to start the demo.</p>
+<p>Open a terminal and connect to the board via SSH. To do so, you need to run into the terminal:</p>
+<pre><code>ssh root@[ip address of KRIA]
+</code></pre>
+<p>It will ask you the password (type <code>root</code>). If you entered it correctly, you are successfully connected to the board.</p>
+<h3 id="standalone-connection">Standalone connection</h3>
+<p>If you have chosen to connect directly to the Kria board using an external Full-HD monitor, you must follow these steps, starting with the board off:</p>
+<ul>
+<li>Connect the Kria to the Full-HD monitor with the HDMI cable;</li>
+<li>Connect the keyboard and mouse kit to the Kria;</li>
+<li>Power on the board and wait until the home page is shown on the external monitor;</li>
+<li>Open the terminal clicking on the <code>Terminal</code> icon in the home page;</li>
+</ul>
+<p>Now the board is ready to use.</p>
+<h2 id="image-file-installation">Image File Installation</h2>
+<ol>
+<li>Download the MakarenaLabs image. They are 4 files to be merged together with 7Zip;</li>
+<li>Merge the downloaded image files into a single image file;</li>
+<li>Verify the SHA-256 hash of the image file. This will ensure that no errors occurred in the transmission and merge of the files. If your system is Windows 11:<ol>
+<li>Click <em>Search</em> and run <code>powershell</code>. (Note: <code>cmd</code> will not work);</li>
+<li>Navigate to the directory containing the image file;</li>
+<li>Enter <code>Get-FileHash &lt;filename&gt;</code>;</li>
+<li>Wait 15 to 30 seconds;</li>
+<li>The hash value will appear;</li>
+</ol>
+</li>
+<li>Flash the MakarenaLabs image file to the microSD card with Balena Etcher. It must be flashed as a boot image;</li>
+</ol>
+<p>Connect the 2D USB webcam and the 3D camera to the USB ports of the Kria and wait about 3 or 4 seconds. If you want to know the IDs of the cameras plugged in, run the following command</p>
+<pre><code class="language-bash">v4l2-ctl --list-devices
+</code></pre>
+<p>you will have an ouput similar to the following</p>
+<pre><code class="language-bash">web camera: XM Camera (usb-xhci-hcd.1.auto-1.1):
+        /dev/video0
+        /dev/video1
+        /dev/media0
+
+pmdmodule287xUVC (usb-xhci-hcd.1.auto-1.3):
+        /dev/video2
+        /dev/video3
+        /dev/media1
+
+</code></pre>
+<p>where the ID of the camera we need is the first one. In this case, our 2D camera is the one named <code>web camera: XM Camera</code> with its ID = 0, while the 3D camera is called <code>pmdmodule287xUVC</code> with its ID = 2 (basically you have to take the number at the end of the path, so the web camera has ID 0 because it has the path <code>/dev/video0</code> which ends with 0).</p>
+<h2 id="start-the-musebox-server-process">Start the MuseBox Server process</h2>
+<p>The first step to run the demo is to start the MuseBox Server process.</p>
+<ol>
+<li>
+<p>Go to the MuseBox's root directory with</p>
+<pre><code>cd /home/root/smartlock-core-kria-kv260/musebox-server
+</code></pre>
+</li>
+<li>
+<p>To run the MuseBox Server, tap</p>
+<pre><code>./MuseBox zmq
+</code></pre>
+</li>
+<li>
+<p>The server is ready when the server's port is shown on terminal, for example</p>
+<pre><code>MuseBox Server - v3.0.0
+Checking license...
+No license needed
+License ok
+remove from slot 0 returns: 0 (Ok)
+kv260-benchmark-b4096: loaded to slot 0
+FaceDetection init success.
+FaceRecognition init success.
+Database /home/root/smartlock-core-kria-kv260/musebox-server/database/ feature extraction success.
+FaceLandmark 196 points init success.
+ZeroMQ selected
+****************************************************************************
+*                 MuseBox server is running at port 9696!                  *
+****************************************************************************
+</code></pre>
+</li>
+</ol>
+<h2 id="populate-faces-database">Populate Faces Database</h2>
+<p>The second step (optional, but strongly suggested for testing) is to add your face to the database. You can do that using the MakarenaLabs <code>take-a-pic</code> tool.
+For this step, please be sure not to have the 3D camera attached to the board in order to avoid some priority problems in the automatic choosing of the camera by the OS.</p>
+<h4 id="configuration">Configuration</h4>
+<p>To configure <code>take-a-pic</code> tool, first open a new terminal and connect to the board with <code>ssh root@[ip address of KRIA]</code>. The password is <code>root</code>.
+When you are connected to the board, go to the tool's root directory using:</p>
+<pre><code class="language-bash">cd smartlock-core-kria-kv260/take-a-pic
+</code></pre>
+<p>The tool has several configuration flags and parameters that we are going to explain. To run the help function of the tool, run:</p>
+<pre><code class="language-bash">venv/bin/python takeAPic.py --help
+</code></pre>
+<p>and it will show an output like this one</p>
+<pre><code class="language-bash">usage: Take a Pic [-h] [-c CAMERA_ID] [-sh SUB_HOST] [-ph PUB_HOST] [-sp SUB_PORT] [-pp PUB_PORT] [-v]
+
+Take a Pic
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CAMERA_ID, --camera CAMERA_ID
+                        Camera ID
+  -sh SUB_HOST, --sub_host SUB_HOST
+                        Subscriber Host
+  -ph PUB_HOST, --pub_host PUB_HOST
+                        Publisher Host
+  -sp SUB_PORT, --sub_port SUB_PORT
+                        Subscriber Port
+  -pp PUB_PORT, --pub_port PUB_PORT
+                        Publisher Port
+  -v, --version         show program's version number and exit
+</code></pre>
+<p>where:</p>
+<ul>
+<li><code>-c</code>: you use this flag to set the id of 2D camera which is used to take the pic of your face. Default value is <code>-1</code>, so the OS can choose by itself the 2D camera;</li>
+<li><code>-sh</code>: the host of the subscriber. Default value is <code>127.0.0.1</code>;</li>
+<li><code>-ph</code>: the host of the publisher. Default value is <code>127.0.0.1</code>;</li>
+<li><code>-sp</code>: the port of the subscriber. Default value is <code>5556</code>;</li>
+<li><code>-pp</code>: the port of the publisher. Default value is <code>9696</code>;</li>
+<li><code>-v</code>: it is used to show the current version of the tool;</li>
+</ul>
+<h3 id="execution">Execution</h3>
+<p>Before starting the execution, verify that the 2D camera is attached to a USB port on the Kria board and do not forget to verify its right ID as explained at the top of this section. In our case the ID of 2D camera is 0, so:</p>
+<ol>
+<li>
+<p>Execute the script with the command</p>
+<pre><code>venv/bin/python takeAPic.py -c 0
+</code></pre>
+<p>and place yourself in front of the cameras.</p>
+</li>
+<li>
+<p>Follow the monitor tool instructions. You will have to press the <code>c</code> key to take a pic, or the <code>q</code> one to quit.</p>
+</li>
+<li>
+<p>You should now see a new line asking to insert the name of the file.</p>
+</li>
+<li>
+<p>Please insert it <em><strong>without</strong></em> the file extension (i.e. <em>guglielmo</em>, not <em>guglielmo.png</em>).</p>
+</li>
+</ol>
+<div style="width: 100%; text-align: center">  
+   <img src="../../images/tap-1person.png" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="TakeAPic with 1 Person">  
+   <p style="text-align: center; font-style: italic">Fig. 1 - TakeAPic with 1 person</p>  
+</div>
+
+<p>At this step, you have to restart MuseBox Server to recognize the new face:</p>
+<ul>
+<li>Go back to the same terminal where the server was started and tap <code>Ctrl + C</code>;</li>
+<li>To restart MuseBox Server run <code>./MuseBox zmq</code>; </li>
+</ul>
+<h2 id="start-demo-software">Start demo software</h2>
+<p>Verify that the 3D camera is attached to a USB port on the Kria using a USB 3.2 data cable. Please note that a common reason for failure is the use of a USB cable rated for power but not for USB 3.2 data.</p>
+<p>The <code>smart_lock_bin</code> executable accepts two necessary parameters and three optional flags as input. The first value you must send to it is the ID of the 2D camera which you have obtained in the previous steps. The second one is the 3D confidence which indicates the similarity of the face being recorded with a real face model, represented as a point cloud. Basically, the lower is the value of the 3D similarity, the more confident the system is in validating an actual human face. A real face must have a similarity less than or equal to that value to be considered so. By default this value is set to <code>1800</code>. Then, the three flags are:</p>
+<ul>
+<li><code>--show</code>: with this flag you can enable the user interface in order to see the camera output;</li>
+<li><code>--debug</code>: this flag is used to know the state of some variables within the code;</li>
+<li><code>--no-fullscreen</code>: this flag avoids the fullscreen mode (not recommended using the <a href="#standalone-connection">standalone connection</a>);</li>
+</ul>
+<p>So, for example, if we run the command <code>./smart_lock_bin 0 1800 --show</code>, we are setting the 2D camera with ID 0 and the 3D threshold to 1800, so our face has to be a similarity less than or equal to that value to be considered so.</p>
+<p>Let's start with the next steps.</p>
+<ol>
+<li>On the same terminal of <code>take-a-pic</code> or on a new terminal, repeat the ssh connection process</li>
+<li>
+<p>Go to the SmartLock Core build directory with:</p>
+<pre><code>cd /home/root/smartlock-core-kria-kv260/build
+</code></pre>
+</li>
+<li>
+<p>Run the <code>smart_lock_bin</code> executable with two parameters: 2D camera index and the 3D confidence. An example might be:</p>
+<pre><code>./smart_lock_bin 0 1800 --show
+</code></pre>
+<p>with the <code>--show</code> flag the graphic interface can be activated and the images are shown in full screen (by default). When the face is recognized, the flow stucks and asks you to press the <code>r</code> button on the keyboard to restart the recognition flow.</p>
+</li>
+</ol>
+<p>This will start the SmartLock algorithm and the results of the AI models will be displayed on this new terminal.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../how-to-run/" class="btn btn-neutral float-left" title="How to run the demo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../running-on-arty-z7/" class="btn btn-neutral float-right" title="Running on Arty Z7-20">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../how-to-run/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../running-on-arty-z7/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
