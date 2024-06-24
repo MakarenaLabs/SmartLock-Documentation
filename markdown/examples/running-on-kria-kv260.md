@@ -212,4 +212,8 @@ Let's start with the next steps.
 
     with the `--show` flag the graphic interface can be activated and the images are shown in full screen (by default). When the face is recognized, the flow stucks and asks you to press the `r` button on the keyboard to restart the recognition flow.
 
+4. If your `build` directory should be empty, build the executable running the following command (from the `build` directory):
+
+        cmake .. && make -j2
+
 This will start the SmartLock algorithm and the results of the AI models will be displayed on this new terminal.

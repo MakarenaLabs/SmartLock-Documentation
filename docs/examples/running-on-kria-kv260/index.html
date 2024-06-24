@@ -55,7 +55,7 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../how-to-run/">How to run the demo</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Running on Kria KV260</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Running on Kria KV260</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-board">Setting up the board</a>
     </li>
@@ -320,6 +320,11 @@ optional arguments:
 <pre><code>./smart_lock_bin 0 1800 --show
 </code></pre>
 <p>with the <code>--show</code> flag the graphic interface can be activated and the images are shown in full screen (by default). When the face is recognized, the flow stucks and asks you to press the <code>r</code> button on the keyboard to restart the recognition flow.</p>
+</li>
+<li>
+<p>If your <code>build</code> directory should be empty, build the executable running the following command (from the <code>build</code> directory):</p>
+<pre><code>cmake .. &amp;&amp; make -j2
+</code></pre>
 </li>
 </ol>
 <p>This will start the SmartLock algorithm and the results of the AI models will be displayed on this new terminal.</p>
