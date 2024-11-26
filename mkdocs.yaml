@@ -1,21 +1,16 @@
 site_name: SmartLock Design Reference
-site_url: https://smartlock.musebox.it/
-site_dir: docs
-docs_dir: markdown
+site_dir: smart_lock_server
 nav:
         - Introduction:
-                - Home: index.md
-                - Project Description: project-description.md
-                - Hardware & Software requirements: hw-sw-requirements.md
-        - Run the examples: 
-                - How to run the demo: examples/how-to-run.md
-                - Running on Kria KV260: examples/running-on-kria-kv260.md
-                - Running on Arty Z7-20: examples/running-on-arty-z7.md
-        - Code analysis:
-                - Kria KV260: code-analysis/kria-kv260.md
-                - Arty Z7-20: code-analysis/arty-z7.md
-        - Testbench:
-                - Kria KV260: testbench/kv260.md
+            - SmartLock Design Reference: index.md
+            - Project Description: project-description.md
+            - Hardware & Software requirements: hw-sw-requirements.md
+        - SmartLock on AMD Kria&trade; KV260:
+            - Initial setup configuration: boards/amd-kria-kv260/initial-setup-configuration.md
+            - Run the code: boards/amd-kria-kv260/run-smartlock.md
+#        - Testbenches:
+#            - AMD Kria&trade; KV260: boards/amd-kria-kv260/testbench.md
+
 theme: readthedocs
 extra:
-  version: v2.0.4
+  version: v3.1.1

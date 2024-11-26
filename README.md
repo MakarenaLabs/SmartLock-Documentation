@@ -17,11 +17,17 @@ and then, to activate the virtual environment
 source venv/bin/activate
 ```
 
-## Build the documentation
-To build the documentation run
+## Documentation real-time testing
+To test the documentation, please use
 ```bash
-mkdocs build
+mkdocs serve --config-file mkdocs_local.yaml
 ```
 
-## Authors
-[Staff MakarenaLabs](mailto:staff@makarenalabs.com)
+## Build the documentation
+Login into MuseBox Server (`ssh whopper@musebox.it`)
+
+```bash
+cd smartlock-doc/
+source venv/bin/activate
+mkdocs build --config-file mkdocs_serve.yaml
+```
