@@ -14,16 +14,22 @@ The first step is to add the features of your face to the database. You can do t
 
 Before starting the execution, verify that the camera is correctly connected via USB port on the Kria&trade; board:
 
-1. Execute the tool with the command
+1. Open a Terminal searching the application on the Ubuntu drawer or press `Ctrl+Alt+T`;
+2. Go to the SmartLock Core build directory with:
+
+        cd smartlock-core-onsemi/build
+
+3. Execute the tool with the command
 
         ./take-a-pic.exe
+
    and place yourself in front of the camera.
 
-2. Follow the monitor tool instructions. You will have to press the `c` key to take a pic, or the `q` button to quit.
+4. Follow the monitor tool instructions. You will have to press the `c` key to take a pic, or the `q` button to quit.
 
-3. You should now see a new line on the terminal asking to insert the name of the file.
+5. You should now see a new line on the terminal asking to insert the name of the file.
 
-4. Please insert it _**without**_ the file extension (i.e. _guglielmo_, not _guglielmo.png_).
+6. Please insert it _**without**_ the file extension (i.e. _guglielmo_, not _guglielmo.png_).
 
 [//]: # (<div style="width: 100%; text-align: center">  )
 
@@ -37,7 +43,8 @@ Before starting the execution, verify that the camera is correctly connected via
 
 Let's start with the run of the software.
 
-1. Open a Terminal searching the application on the Ubuntu drawer or press `Ctrl+Alt+T`;
+1. Open a Terminal searching the application on the Ubuntu drawer or press `Ctrl+Alt+T` (if you are still in the
+   previous terminal, jump to the step 3);
 2. Go to the SmartLock Core build directory with:
 
         cd smartlock-core-onsemi/build
