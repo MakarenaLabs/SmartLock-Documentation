@@ -1,5 +1,6 @@
 site_name: SmartLock Design Reference
-site_dir: smart_lock_server
+site_dir: docs
+docs_dir: markdown
 nav:
         - Introduction:
             - SmartLock Design Reference: index.md

@@ -4,11 +4,11 @@
 This documentation describes the architecture and design reference of the [MakarenaLabs](https://www.makarenalabs.com/) solution for a SmartLock based on 3D Face Verification.
 
 1. **Introduction**
-    - [Project Description](project-description)
-    - [Hardware & Software requirements](hw-sw-requirements)
+    - [Project Description](project-description.md)
+    - [Hardware & Software requirements](hw-sw-requirements.md)
 2. **SmartLock on AMD Kria&trade; KV260**
     - [Initial setup configuration](boards/amd-kria-kv260/initial-setup-configuration.md)
-    - [Hardware & Software requirements](hw-sw-requirements)
+    - [Hardware & Software requirements](hw-sw-requirements.md)
 
 [//]: # (3. **Testbenches**)
 
