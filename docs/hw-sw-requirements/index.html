@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Hardware & Software requirements - SmartLock Design Reference</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Hardware \u0026 Software requirements";
+        var mkdocs_page_input_path = "hw-sw-requirements.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> SmartLock Design Reference
+        </a>
+        <div class="version">
+          v3.1.1
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="..">SmartLock Design Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../project-description/">Project Description</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Hardware & Software requirements</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#hardware-requirements">Hardware requirements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#amd-kriatm-kv260-board">AMD Kria&trade; KV260 Board</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rgb-ir-camera">RGB-IR Camera</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#miscellaneous">Miscellaneous</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#software-requirements">Software requirements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#os-image-request">OS Image Request</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SmartLock on AMD Kria&trade; KV260</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../boards/amd-kria-kv260/initial-setup-configuration/">Initial setup configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../boards/amd-kria-kv260/run-smartlock/">Run the code</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">SmartLock Design Reference</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Introduction</li>
+      <li class="breadcrumb-item active">Hardware & Software requirements</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="hardware-software-requirements">Hardware &amp; Software requirements</h1>
+<p>The SmartLock solution uses different requirements, both software and hardware. In this section all these needs will be
+explained.</p>
+<h2 id="hardware-requirements">Hardware requirements</h2>
+<h3 id="amd-kriatm-kv260-board">AMD Kria&trade; KV260 Board</h3>
+<p>The SmartLock solution proposed here was built on the AMD Kria&trade; KV260 board:</p>
+<ul>
+<li><strong>Kria&trade; KV260</strong>: The Kria&trade; KV260 is built for advanced vision application development without requiring
+  complex hardware design knowledge. For more information, please visit
+  the <a href="https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html">official website</a>;</li>
+</ul>
+<div style="width: 100%;">
+       <img src="https://www.xilinx.com/content/dam/xilinx/imgs/products/som/som-kv260-4.png" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Kria KV260">
+       <p style="text-align: center; font-style: italic">Fig. 1 - Kria&trade; KV260</p>
+   </div>
+
+<h3 id="rgb-ir-camera">RGB-IR Camera</h3>
+<p>The architecture of SmartLock solution is based on a RGB-IR camera provided by <a href="https://www.onsemi.com/">onsemi</a> and a
+VCSEL dot projector provided by <a href="https://ams-osram.com/">ams OSRAM</a>.
+The dot projector is
+a <a href="https://en.wikipedia.org/wiki/Vertical-cavity_surface-emitting_laser">VCSEL (Vertical Cavity Surface Emitting Laser) projector</a>
+and is needed to support the reconstruction of the real human face:</p>
+<ul>
+<li><a href="https://www.onsemi.com/design/tools-software/evaluation-board/AR0830CSSH11SMKAH3-GEVB">onsemi Demo3 Kit</a> with its
+  own <a href="https://www.onsemi.com/products/sensors/image-sensors/AR0830">AR0830CS RGB-IR sensor</a>;</li>
+<li><a href="https://ams-osram.com/products/lasers/ir-lasers-vcsel/ams-belago1-1-dot-projector">ams OSRAM BELAGO1.1 VCSEL dot projector</a>
+  with its driver
+  board (<a href="https://ams-osram.com/products/drivers/led-drivers/ams-as1170-2-channel-led-and-vcsel-driver-ic">ams OSRAM AS1170</a>);</li>
+</ul>
+<table>
+       <tr>
+           <td>
+               <div style="width: 100%;">
+                <img src="/images/AR0830CS.jpg" style="display: block; margin-left: auto; margin-right: auto;" alt="onsemi AR0830CS RGB-IR sensor">
+              </div>
+           </td>
+           <td>
+               <div style="width: 100%;">
+                <img src="/images/belago-1.1.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 80%;" alt="onsemi AR0830CS RGB-IR sensor">
+               </div>
+           </td>
+       </tr>
+       <tr>
+           <td style="text-align: center; font-style: italic">
+               <p style="text-align: center; font-style: italic">Fig. 2 - onsemi AR0830CS RGB-IR sensor</p>
+           </td>
+           <td style="text-align: center; font-style: italic">
+               <p style="text-align: center; font-style: italic">Fig. 3 - ams OSRAM BELAGO1.1 dot projector</p>
+           </td>
+       </tr>
+   </table>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+<p>Some other miscellaneous are required:</p>
+<ul>
+<li><strong>MicroSD card</strong>: it must be <em>greater than or equal to</em> 32GB;</li>
+<li><strong>MicroSD to USB adapter</strong>: to burn the image;</li>
+<li><strong>Full-HD HDMI Monitor and HDMI cable</strong>: to set up and start up run the SmartLock solution;</li>
+<li><strong>Keyboard and mouse kit</strong>: to run the commands into the AMD Kria&trade; KV260 board;</li>
+</ul>
+<p>The whole hardware setup should be very similar to the image below:</p>
+<div style="width: 100%; margin-bottom: 20px;">
+     <img src="/images/whole-setup.JPEG" style="display: block; margin-left: auto; margin-right: auto;" alt="onsemi AR0830CS RGB-IR sensor">
+   </div>
+
+<ol>
+<li><a href="https://www.onsemi.com/design/tools-software/evaluation-board/AR0830CSSH11SMKAH3-GEVB">onsemi Demo3 Kit</a>
+   with <a href="https://www.onsemi.com/products/sensors/image-sensors/AR0830">AR0830CS RGB-IR sensor</a> mounted aboard;</li>
+<li>A stable tripod to install the Demo3 Kit (one of your choice is ok, this model is
+   the <a href="https://www.amazon.com/Neewer-Stabilizer-Lightweight-Smartphones-Camcorders/dp/B074GMW9WY">Neewer T160A</a>);</li>
+<li>USB 3.0 cable provided with the Demo3 Kit;</li>
+<li>An AMD Kria&trade; KV260 board with its microSD card;</li>
+<li>HDMI cable to connect the AMD Kria&trade; KV260 board to your FullHD monitor;</li>
+<li><a href="https://ams-osram.com/products/lasers/ir-lasers-vcsel/ams-belago1-1-dot-projector">ams OSRAM BELAGO1.1 VCSEL dot projector</a>
+   with its driver
+   board (<a href="https://ams-osram.com/products/drivers/led-drivers/ams-as1170-2-channel-led-and-vcsel-driver-ic">ams OSRAM AS1170</a>).
+   Please note that the component in the photo above is in a hardware development state, the sample you have should be
+   different;</li>
+</ol>
+<p>The photo does not include the screen and the keyboard and mouse kit to control the AMD Kria&trade; KV260 board;</p>
+<h2 id="software-requirements">Software requirements</h2>
+<p>There are some software that need to be installed into your PC in order to run the solution successfully. First of all,
+you need to have at least 22GB free on your disk in order to download the image to be burnt (it is more or less 19GB
+big). To burn the image, you need:</p>
+<ul>
+<li><a href="https://www.7-zip.org/download.html"><strong>7Zip</strong></a>: to unarchive the downloaded image files;</li>
+<li><a href="https://etcher.balena.io/"><strong>Balena Etcher</strong></a>: to burn the image. You can use one of your choice, but this one is
+  strongly recommended;</li>
+</ul>
+<h3 id="os-image-request">OS Image Request</h3>
+<p>At this point, you have to download the latest release of the image to burn into the SD card of the AMD Kria&trade;
+KV260 board. To do so, please <a href="mailto:staff@makarenalabs.com?subject=[SMARTLOCK]
+SmartLock v3.1.1 OS image request">send a request email</a> to MakarenaLabs. Be sure to have at least 22GB of free space in your PC in order to
+download all the files.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../project-description/" class="btn btn-neutral float-left" title="Project Description"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../boards/amd-kria-kv260/initial-setup-configuration/" class="btn btn-neutral float-right" title="Initial setup configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../project-description/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../boards/amd-kria-kv260/initial-setup-configuration/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
