@@ -58,6 +58,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#preliminary-actions">Preliminary actions</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#image-file-installation">Image File Installation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#windows-version">Windows version</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#linux-version">Linux version</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -115,14 +121,30 @@ If so, you should have this setup:</p>
 </ul>
 <h3 id="image-file-installation">Image File Installation</h3>
 <p>Install the OS following these steps:</p>
+<h4 id="windows-version">Windows version</h4>
 <ol>
 <li>Download the MakarenaLabs image. They are some files to be merged together with 7Zip;</li>
 <li>Merge the downloaded image files into a single image file;</li>
 <li>Verify the SHA-256 hash of the image file. This will ensure that no errors occurred in the transmission and merge of
-   the files. If your system is Windows 11:<ol>
+   the files:<ol>
 <li>Click <em>Search</em> and run <code>powershell</code>. (Note: <code>cmd</code> will not work);</li>
 <li>Navigate to the directory containing the image file;</li>
 <li>Enter <code>Get-FileHash &lt;filename&gt;</code>;</li>
+<li>Wait 15 to 30 seconds;</li>
+<li>The hash value will appear;</li>
+</ol>
+</li>
+<li>Flash the MakarenaLabs image file to the microSD card with Balena Etcher. It must be flashed as a boot image;</li>
+</ol>
+<h4 id="linux-version">Linux version</h4>
+<ol>
+<li>Download the MakarenaLabs image. They are some files to be merged together with 7Zip;</li>
+<li>Merge the downloaded image files into a single image file;</li>
+<li>Verify the SHA-256 hash of the image file. This will ensure that no errors occurred in the transmission and merge of
+   the files:<ol>
+<li>Open the terminal searching on the Linux drawer <code>Terminal</code> or typing <code>Ctrl+Alt+T</code>;</li>
+<li>Navigate to the directory containing the image file;</li>
+<li>Enter <code>sha256sum &lt;filename&gt;</code>;</li>
 <li>Wait 15 to 30 seconds;</li>
 <li>The hash value will appear;</li>
 </ol>

@@ -26,13 +26,28 @@ If so, you should have this setup:
 
 Install the OS following these steps:
 
+#### Windows version
+
 1. Download the MakarenaLabs image. They are some files to be merged together with 7Zip;
 2. Merge the downloaded image files into a single image file;
 3. Verify the SHA-256 hash of the image file. This will ensure that no errors occurred in the transmission and merge of
-   the files. If your system is Windows 11:
+   the files:
     1. Click _Search_ and run `powershell`. (Note: `cmd` will not work);
     2. Navigate to the directory containing the image file;
     3. Enter `Get-FileHash <filename>`;
+    4. Wait 15 to 30 seconds;
+    5. The hash value will appear;
+4. Flash the MakarenaLabs image file to the microSD card with Balena Etcher. It must be flashed as a boot image;
+
+#### Linux version
+
+1. Download the MakarenaLabs image. They are some files to be merged together with 7Zip;
+2. Merge the downloaded image files into a single image file;
+3. Verify the SHA-256 hash of the image file. This will ensure that no errors occurred in the transmission and merge of
+   the files:
+    1. Open the terminal searching on the Linux drawer `Terminal` or typing `Ctrl+Alt+T`;
+    2. Navigate to the directory containing the image file;
+    3. Enter `sha256sum <filename>`;
     4. Wait 15 to 30 seconds;
     5. The hash value will appear;
 4. Flash the MakarenaLabs image file to the microSD card with Balena Etcher. It must be flashed as a boot image;
