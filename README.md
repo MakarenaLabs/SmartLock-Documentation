@@ -4,25 +4,45 @@ Documentation of the SmartLock project
 
 ## Prerequisites
 
- - Python3
- - Python virtual environment (`python3-venv`)
+- Python3
+- Python virtual environment (`python3-venv`)
 
-## Configuration
-To start building the documentation, please run
+## Virtual environment installation
+
+Starting from the root directory of the project, you have to install the virtual environment in order to build and serve
+the documentation.
+To do that, please install the virtual environment using
+
 ```bash
 python3 -m venv venv
 ```
-and then, to activate the virtual environment
+
+A directory called `venv` should be created in the current directory.
+
+## Environment configuration
+
+First of all, you have to activate the virtual environment. Please run
+
 ```bash
 source venv/bin/activate
 ```
 
-Once done, please install all the requirements with
+Once done, go ahead installing all the requirements with
+
 ```bash
 pip install -r requirements.txt
 ```
 
-An example of terminal output should be very close to
+## Documentation real-time testing
+
+While the virtual environment is still active, serve the documentation running
+
+```bash
+mkdocs serve
+```
+
+An example of complete terminal flow should be very close to
+
 ```bash
 /path/to/doc $ python3 -m venv venv
 /path/to/doc $ source venv/bin/activate
@@ -41,11 +61,6 @@ INFO    -  [15:18:43] Serving on http://127.0.0.1:8000/
 
 At the address http://127.0.0.1:8000 you should find the documentation.
 
-## Documentation real-time testing
-To test the documentation, please use
-```bash
-mkdocs serve
-```
-
 ## Authors
+
 [Staff MakarenaLabs](mailto:staff@makarenalabs.com)
