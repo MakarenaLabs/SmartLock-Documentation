@@ -13,8 +13,14 @@ Starting from the root directory of the project, you have to install the virtual
 the documentation.
 To do that, please install the virtual environment using
 
+### Linux
 ```bash
 python3 -m venv venv
+```
+
+### Windows
+```powershell
+python.exe -m venv venv
 ```
 
 A directory called `venv` should be created in the current directory.
@@ -23,9 +29,16 @@ A directory called `venv` should be created in the current directory.
 
 First of all, you have to activate the virtual environment. Please run
 
+### Linux
 ```bash
 source venv/bin/activate
 ```
+
+### Windows
+```powershell
+.\venv\Scripts\activate
+```
+
 
 Once done, go ahead installing all the requirements with
 
