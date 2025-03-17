@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Initial setup configuration - SmartLock Design Reference</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Initial setup configuration";
+        var mkdocs_page_input_path = "boards/amd-kria-kv260/initial-setup-configuration.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SmartLock Design Reference
+        </a>
+        <div class="version">
+          v3.1.1
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">SmartLock Design Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../project-description/">Project Description</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../hw-sw-requirements/">Hardware & Software requirements</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SmartLock on AMD Kria&trade; KV260</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Initial setup configuration</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#preliminary-actions">Preliminary actions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#image-file-installation">Image File Installation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#windows-version">Windows version</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#linux-version">Linux version</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#board-connection">Board connection</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run-smartlock/">Run the code</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SmartLock Design Reference</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">SmartLock on AMD Kria&trade; KV260</li>
+      <li class="breadcrumb-item active">Initial setup configuration</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="initial-setup-configuration">Initial setup configuration</h1>
+<p>In this chapter is explained how to setup the hardware to run the example on the AMD Kria&trade; KV260 board. There are
+some preliminary steps
+in order to have the setup completely up and running, that they are described in the section below.</p>
+<div style="width: 100%;">
+    <img src="https://www.xilinx.com/content/dam/xilinx/imgs/products/som/som-kv260-4.png" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Kria KV260">
+    <p style="text-align: center; font-style: italic">Fig. 1 - AMD Kria&trade; KV260</p>
+</div>
+
+<h2 id="preliminary-actions">Preliminary actions</h2>
+<p>At this step, you should have completed all the requirements provided in the
+section <a href="/hw-sw-requirements">Hardware &amp; Software requirements</a>.
+If so, you should have this setup:</p>
+<ul>
+<li>An AMD Kria&trade; KV260 board with the flashed SD card using the image provided
+  by <a href="https://www.makarenalabs.com/">MakarenaLabs</a>;</li>
+<li>The Demo 3 Development Kit provided by onsemi with the AR0830CS RGB-IR sensor installed on board and its own USB 3.0
+  cable;</li>
+<li>The dot projector in the right position as near as possible to the 2D sensor;</li>
+<li>Your FullHD monitor and the keyboard/mouse kit connected to the AMD Kria&trade; KV260;</li>
+</ul>
+<h3 id="image-file-installation">Image File Installation</h3>
+<p>Install the OS following these steps:</p>
+<h4 id="windows-version">Windows version</h4>
+<ol>
+<li>Download the MakarenaLabs image. They are some files to be merged together with 7Zip;</li>
+<li>Merge the downloaded image files into a single image file;</li>
+<li>Verify the SHA-256 hash of the image file. This will ensure that no errors occurred in the transmission and merge of
+   the files:<ol>
+<li>Click <em>Search</em> and run <code>powershell</code>. (Note: <code>cmd</code> will not work);</li>
+<li>Navigate to the directory containing the image file;</li>
+<li>Enter <code>Get-FileHash &lt;filename&gt;</code>;</li>
+<li>Wait 15 to 30 seconds;</li>
+<li>The hash value will appear;</li>
+</ol>
+</li>
+<li>Flash the MakarenaLabs image file to the microSD card with Balena Etcher. It must be flashed as a boot image;</li>
+</ol>
+<h4 id="linux-version">Linux version</h4>
+<ol>
+<li>Download the MakarenaLabs image. They are some files to be merged together with 7Zip;</li>
+<li>Merge the downloaded image files into a single image file;</li>
+<li>Verify the SHA-256 hash of the image file. This will ensure that no errors occurred in the transmission and merge of
+   the files:<ol>
+<li>Open the terminal searching on the Linux drawer <code>Terminal</code> or typing <code>Ctrl+Alt+T</code>;</li>
+<li>Navigate to the directory containing the image file;</li>
+<li>Enter <code>sha256sum &lt;filename&gt;</code>;</li>
+<li>Wait 15 to 30 seconds;</li>
+<li>The hash value will appear;</li>
+</ol>
+</li>
+<li>Flash the MakarenaLabs image file to the microSD card with Balena Etcher. It must be flashed as a boot image;</li>
+</ol>
+<p>You can check here the integrity of the image file writing in the field the hash value you got in the step <code>3.5</code> of the
+previous list:</p>
+<style>
+      .container {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          max-width: 100%;
+      }
+      input[type="text"] {
+          flex: 1;
+          padding: 8px;
+          font-size: 14px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+      button {
+          padding: 8px 12px;
+          font-size: 14px;
+          border: none;
+          border-radius: 4px;
+          background-color: #007BFF;
+          color: white;
+          cursor: pointer;
+      }
+      button:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+      }
+      button:hover:not(:disabled) {
+          background-color: #0056b3;
+      }
+      .result {
+          margin-top: 20px;
+          font-weight: bold;
+      }
+  </style>
+
+<div class="container">
+      <input type="text" id="checksumInput" placeholder="Enter checksum">
+      <button id="validateButton" onclick="validateChecksum()" disabled>Validate</button>
+  </div>
+<div class="result" id="result"></div>
+
+<script>
+      const checksumInput = document.getElementById('checksumInput');
+      const validateButton = document.getElementById('validateButton');
+      const resultDiv = document.getElementById('result');
+
+      // Enable/disable button based on input field content
+      checksumInput.addEventListener('input', () => {
+          validateButton.disabled = checksumInput.value.trim() === '';
+          resultDiv.textContent = '';
+      });
+
+      function validateChecksum() {
+          const inputValue = checksumInput.value.trim();
+
+          // Example: Replace with your checksum validation logic
+          const expectedChecksum = "12345abcd"; // Replace with the actual expected checksum
+
+          if (inputValue === expectedChecksum) {
+              resultDiv.textContent = "Checksum is valid!";
+              resultDiv.style.color = "green";
+          } else {
+              resultDiv.textContent = "Checksum is invalid!";
+              resultDiv.style.color = "red";
+          }
+      }
+  </script>
+
+<p>If the checksum validation is passed, the image is successfully flashed, and you can continue with the next steps.</p>
+<h2 id="board-connection">Board connection</h2>
+<p>Now, you are ready to start up the board. To do so, insert the newly flashed SD card into the AMD Kria&trade; KV260 and
+connect the HDMI cable into the dedicated port. Now, you can connect the power cable to the connector to boot up the
+board.</p>
+<p><strong>NOTE</strong>: insert the HDMI cable <strong><u>before</u></strong> the power connector, otherwise you cannot be able to see anything on
+the screen. So, the steps are:</p>
+<ol>
+<li>Insert the flashed SD card;</li>
+<li>Connect the AMD Kria&trade; KV260 to your monitor via HDMI cable;</li>
+<li>Connect the power supply to the board in order to power it.</li>
+</ol>
+<p>When the Kria boots, please check the three LEDs near the fan. The center light should blink and the other two lights
+should be solid when the board has successfully booted. You should be now in the login screen of Ubuntu 22.04.</p>
+<div style="width: 100%;">
+    <img src="/images/kria-leds.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Kria successfully booted leds">
+    <p style="text-align: center; font-style: italic">Fig. 2 - Kria KV260 booting LEDs</p>
+</div>
+
+<p>Log into the <code>ubuntu</code> account using the password <code>makarenalabs</code>. Now, you should see the desktop.</p>
+<p>At this step, you are ready to connect the onsemi Demo3 Development Kit to one of the USB port of the AMD Kria&trade;
+KV260 and wait it
+to be ready (it takes more or less 10 seconds). The board is ready when the LEDs placed behind are lit in fixed
+position, as shown in the image below.</p>
+<div style="width: 100%;">
+    <img src="/images/onsemi-leds.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;" alt="onsemi sensor successfully booted leds">
+    <p style="text-align: center; font-style: italic">Fig. 3 - onsemi Demo3 Evaluation Kit booting LEDs</p>
+</div>
+
+<p>Now you can connect also the ams OSRAM dot projector.</p>
+<p>At this step, you are ready to run the SmartLock Core solution! Go next to know how to do so.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../../hw-sw-requirements/" class="btn btn-neutral float-left" title="Hardware & Software requirements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../run-smartlock/" class="btn btn-neutral float-right" title="Run the code">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../../hw-sw-requirements/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../run-smartlock/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
