@@ -21,7 +21,7 @@ Before starting the execution, verify that the camera is correctly connected via
 
 3. Execute the tool with the command
 
-        ./take-a-pic.exe
+        ./take-a-pic_v3.1.1
 
    and place yourself in front of the camera.
 
@@ -51,7 +51,7 @@ Let's start with the run of the software.
 
 3. Run the `smartlock.exe` executable without any parameter. An example is:
 
-        ./smartlock_v3.1.1.exe
+        ./smartlock_v3.1.1
 
    Place your face in front of the camera in order to be detected and, once the face is recognized, the flow stucks and
    asks you to press the `r` button on the keyboard to restart the recognition flow. In this case, a virtual door is
