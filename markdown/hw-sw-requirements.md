@@ -101,5 +101,5 @@ big). To burn the image, you need:
 
 At this point, you have to download the latest release of the image to burn into the SD card of the AMD Kria&trade;
 KV260 board. To do so, please [send a request email](mailto:staff@makarenalabs.com?subject=[SMARTLOCK]
-SmartLock v3.1.1 OS image request) to MakarenaLabs. Be sure to have at least 32GB of free space in your PC in order to
+SmartLock v3.2.0 OS image request) to MakarenaLabs. Be sure to have at least 32GB of free space in your PC in order to
 download all the files.
