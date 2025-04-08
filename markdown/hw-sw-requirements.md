@@ -72,7 +72,7 @@ The whole hardware setup should be very similar to the image below:
      <img src="/images/whole-setup.JPEG" style="display: block; margin-left: auto; margin-right: auto;" alt="onsemi AR0830CS RGB-IR sensor">
    </div>
 
-1. [onsemi Demo3 Kit](https://www.onsemi.com/design/tools-software/evaluation-board/AR0830CSSH11SMKAH3-GEVB)
+1. [onsemi Demo3 Kit](https://www.onsemi.com/design/evaluation-board/AGB1N0CS-GEVK)
    with [AR0830CS RGB-IR sensor](https://www.onsemi.com/products/sensors/image-sensors/AR0830) mounted aboard;
 2. A stable tripod to install the Demo3 Kit (one of your choice is ok, this model is
    the [Neewer T160A](https://www.amazon.com/Neewer-Stabilizer-Lightweight-Smartphones-Camcorders/dp/B074GMW9WY));
