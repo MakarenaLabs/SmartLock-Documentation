@@ -36,7 +36,7 @@ The video below is showing you the content of the box you received. As in the pa
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
-You can jump to [Board connections](#board-connection) chapter.
+As said before, the AMD Kria&trade; KV260 is already equipped with the flashed microSD card with SmartLock Ubuntu Image v3.2.0, so you can jump to [Board connections](#board-connection) chapter.
 
 ## Preliminary actions
 
