@@ -55,6 +55,12 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Initial setup configuration</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#smartlock-kit">SmartLock Kit</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3d-smartlock-box-unboxing">3D SmartLock Box Unboxing</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#preliminary-actions">Preliminary actions</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#image-file-installation">Image File Installation</a>
@@ -68,6 +74,12 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#board-connection">Board connection</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#usb-connections">USB Connections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pmod-connections">PMOD Connections</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -104,9 +116,38 @@ some preliminary steps
 in order to have the setup completely up and running, that they are described in the section below.</p>
 <div style="width: 100%;">
     <img src="https://www.xilinx.com/content/dam/xilinx/imgs/products/som/som-kv260-4.png" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Kria KV260">
+    <br>
     <p style="text-align: center; font-style: italic">Fig. 1 - AMD Kria&trade; KV260</p>
 </div>
 
+<h2 id="smartlock-kit">SmartLock Kit</h2>
+<p>If you received the SmartLock kit, please follow this section. Otherwise, please go ahead with the <a href="#preliminary-actions">Preliminary actions</a> chapter.</p>
+<p>Your kit is composed by:</p>
+<ul>
+<li>Black 3D printed SmartLock box;</li>
+<li>AMD Kria&trade; KV260 Development Kit with 32GB microSD card. It is already flashed with the new version of the SmartLock Ubuntu Image (v3.2.0);</li>
+<li>AMD Development Tools Basic Accessory for the Kria&trade; KV260;</li>
+</ul>
+<h3 id="3d-smartlock-box-unboxing">3D SmartLock Box Unboxing</h3>
+<p>The video below is showing you the content of the box you received. As in the packaging list paper, you will find:</p>
+<ul>
+<li>A mini tripod stand in the black bag;</li>
+<li>An USB 3.0 cable to connect the onsemi Demo 3 kit to the AMD Kria&trade; KV260 board;</li>
+<li>An Type-A Type-A USB cable to power on the dot projector (VCSEL);</li>
+<li>The black box of the SmartLock (3D printed and designed by MakarenaLabs), which contains:<ul>
+<li><a href="https://www.onsemi.com/design/evaluation-board/AGB1N0CS-GEVK">onsemi Demo 3 Board (AGB1N0CS-GEVVK)</a>;</li>
+<li><a href="https://www.onsemi.com/design/evaluation-board/AR0830CSSH11SMKAH3-GEVB">onsemi Optical Sensor Dvelopment Tools 8MP (AR0830CSSH11SMKAH3-GEVB)</a>;</li>
+<li><a href="https://ams-osram.com/products/lasers/ir-lasers-vcsel/ams-belago1-1-dot-projector">ams osram BELAGO1.1 Dot Projector</a>;</li>
+<li><a href="https://ams-osram.com/products/drivers/led-drivers/ams-as1170-2-channel-led-and-vcsel-driver-ic">ams osram AS1170 Dev Kit (AS1170_WL_EVM_EB)</a>;</li>
+</ul>
+</li>
+</ul>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 50%; margin-bottom: 50px;">
+        <iframe src="https://www.youtube.com/embed/rJ-al2hD7MY"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p>You can jump to <a href="#board-connection">Board connections</a> chapter.</p>
 <h2 id="preliminary-actions">Preliminary actions</h2>
 <p>At this step, you should have completed all the requirements provided in the
 section <a href="/hw-sw-requirements">Hardware &amp; Software requirements</a>.
@@ -238,20 +279,37 @@ the screen. So, the steps are:</p>
 should be solid when the board has successfully booted. You should be now in the login screen of Ubuntu 22.04.</p>
 <div style="width: 100%;">
     <img src="/images/kria-leds.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Kria successfully booted leds">
+    <br>
     <p style="text-align: center; font-style: italic">Fig. 2 - Kria KV260 booting LEDs</p>
 </div>
 
 <p>Log into the <code>ubuntu</code> account using the password <code>makarenalabs</code>. Now, you should see the desktop.</p>
-<p>At this step, you are ready to connect the onsemi Demo3 Development Kit to one of the USB port of the AMD Kria&trade;
-KV260 and wait it
-to be ready (it takes more or less 10 seconds). The board is ready when the LEDs placed behind are lit in fixed
-position, as shown in the image below.</p>
+<p>At this step, you are ready to connect the SmartLock Box using the USB cables provided in the kit. </p>
+<h3 id="usb-connections">USB Connections</h3>
+<p>Connect the blue and the black cables into the USB hub on the right of the AMD Kria&trade; KV260</p>
 <div style="width: 100%;">
-    <img src="/images/onsemi-leds.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;" alt="onsemi sensor successfully booted leds">
-    <p style="text-align: center; font-style: italic">Fig. 3 - onsemi Demo3 Evaluation Kit booting LEDs</p>
+    <img src="/images/usb-connections.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="USB Connections">
+    <br>
+    <p style="text-align: center; font-style: italic">Fig. 3 - USB Connections AMD Kria&trade; KV260</p>
 </div>
 
-<p>Now you can connect also the ams OSRAM dot projector.</p>
+<p>and connect also them to the SmartLock Box</p>
+<div style="width: 100%;">
+    <img src="/images/usb-connections-box.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="USB Connections">
+    <br>
+    <p style="text-align: center; font-style: italic">Fig. 4 - USB Connections SmartLock Box</p>
+</div>
+
+<p>Now, you must wait the onsemi camera to be ready (it takes more or less 10 seconds) before continue.</p>
+<h3 id="pmod-connections">PMOD Connections</h3>
+<p>Then, connect the white and purple cables to the PMOD. Insert the PMOD connectors following the white piece of tape on
+the PMOD feet on the AMD Kria&trade; KV260, as shown in the following figure.</p>
+<div style="width: 100%;">
+    <img src="/images/pmod-connections.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="PMOD Connections">
+    <br>
+    <p style="text-align: center; font-style: italic">Fig. 5 - PMOD Connections</p>
+</div>
+
 <p>At this step, you are ready to run the SmartLock Core solution! Go next to know how to do so.</p>
               
             </div>

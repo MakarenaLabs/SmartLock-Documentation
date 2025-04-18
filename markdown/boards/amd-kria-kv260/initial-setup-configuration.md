@@ -6,6 +6,7 @@ in order to have the setup completely up and running, that they are described in
 
 <div style="width: 100%;">
     <img src="https://www.xilinx.com/content/dam/xilinx/imgs/products/som/som-kv260-4.png" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Kria KV260">
+    <br>
     <p style="text-align: center; font-style: italic">Fig. 1 - AMD Kria&trade; KV260</p>
 </div>
 
@@ -172,6 +173,7 @@ should be solid when the board has successfully booted. You should be now in the
 
 <div style="width: 100%;">
     <img src="/images/kria-leds.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="Kria successfully booted leds">
+    <br>
     <p style="text-align: center; font-style: italic">Fig. 2 - Kria KV260 booting LEDs</p>
 </div>
 
@@ -181,13 +183,23 @@ At this step, you are ready to connect the SmartLock Box using the USB cables pr
 
 ### USB Connections
 
-Connect the blue and the black cables into the USB hub on the right of the AMD Kria&trade; KV260. Wait the onsemi camera
-to be ready (it takes more or less 10 seconds).
+Connect the blue and the black cables into the USB hub on the right of the AMD Kria&trade; KV260
 
 <div style="width: 100%;">
     <img src="/images/usb-connections.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="USB Connections">
-    <p style="text-align: center; font-style: italic">Fig. 3 - USB Connections</p>
+    <br>
+    <p style="text-align: center; font-style: italic">Fig. 3 - USB Connections AMD Kria&trade; KV260</p>
 </div>
+
+and connect also them to the SmartLock Box
+
+<div style="width: 100%;">
+    <img src="/images/usb-connections-box.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="USB Connections">
+    <br>
+    <p style="text-align: center; font-style: italic">Fig. 4 - USB Connections SmartLock Box</p>
+</div>
+
+Now, you must wait the onsemi camera to be ready (it takes more or less 10 seconds) before continue.
 
 
 ### PMOD Connections
@@ -196,7 +208,8 @@ the PMOD feet on the AMD Kria&trade; KV260, as shown in the following figure.
 
 <div style="width: 100%;">
     <img src="/images/pmod-connections.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 70%;" alt="PMOD Connections">
-    <p style="text-align: center; font-style: italic">Fig. 4 - PMOD Connections</p>
+    <br>
+    <p style="text-align: center; font-style: italic">Fig. 5 - PMOD Connections</p>
 </div>
 
 At this step, you are ready to run the SmartLock Core solution! Go next to know how to do so.
