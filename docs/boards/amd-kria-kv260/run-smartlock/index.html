@@ -97,6 +97,8 @@
 explained how to run the example on the AMD Kria&trade; KV260 board.</p>
 <p>Before to run the SmartLock Core software, you have to populate the database of the users faces' features with the faces
 you want to be recognized. Otherwise, the sofware still correctly running, but not recognizing anyone as expected.</p>
+<p><strong>Note</strong>: the very first time you run the code after a board start up, the command could take 1 minutes or more to execute. This behaviour
+is completely normal because the system has to load all the AI models.</p>
 <h2 id="populate-faces-features-database">Populate Faces' Features Database</h2>
 <p>The first step is to add the features of your face to the database. You can do that using the <code>take-a-pic</code> tool.</p>
 <h3 id="execution">Execution</h3>
@@ -123,7 +125,7 @@ you want to be recognized. Otherwise, the sofware still correctly running, but n
 <p>You should now see a new line on the terminal asking to insert the name of the file.</p>
 </li>
 <li>
-<p>Please insert it <em><strong>without</strong></em> the file extension (i.e. <em>guglielmo</em>, not <em>guglielmo.png</em>).</p>
+<p>Please insert it <em><strong>without</strong></em> the file extension (i.e. <em>your_name</em>, not <em>your_name.png</em>).</p>
 </li>
 </ol>
 <h2 id="start-demo-software">Start demo software</h2>
@@ -137,7 +139,7 @@ you want to be recognized. Otherwise, the sofware still correctly running, but n
 </code></pre>
 </li>
 <li>
-<p>Run the <code>smartlock.exe</code> executable without any parameter. An example is:</p>
+<p>Run the <code>smartlock</code> executable without any parameter. An example is:</p>
 <pre><code>./smartlock_v3.2.0
 </code></pre>
 </li>

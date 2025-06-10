@@ -36,6 +36,12 @@ The video below is showing you the content of the box you received. As in the pa
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+<div style="background-color:rgba(180, 180, 0, 30%); vertical-align: middle; padding:20px 0;border-radius: 10px">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please be sure to remove the protective transparent cap from the 2D sensor.
+</div>
+
+<br>
+
 As said before, the AMD Kria&trade; KV260 is already equipped with the flashed microSD card with SmartLock Ubuntu Image v3.2.0, so you can jump to [Board connections](#board-connection) chapter.
 
 ## Preliminary actions

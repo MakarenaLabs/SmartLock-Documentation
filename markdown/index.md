@@ -20,8 +20,7 @@ For any question, please contact:
 - **Amanda Emerson**: [amanda.emerson@amd.com](mailto:amanda.emerson@amd.com) 
 - **Gordon Lau**: [gordon.lau@amd.com](mailto:gordon.lau@amd.com)
 - **Robert Green**: [robert.green@amd.com](mailto:robert.green@amd.com)
-- **Enrico Giordano**: [enrico.giordano@makarenalabs.com](mailto:enrico.giordano@makarenalabs.com)
-- **Guglielmo Zanni**: [guglielmo.zanni@makarenalabs.com](mailto:guglielmo.zanni@makarenalabs.com)
-- **Brixhilda Koci**: [brixhilda.koci@makarenalabs.com](mailto:brixhilda.koci@makarenalabs.com)
 - **Matteo Castagnaro**: [matteo.castagnaro@makarenalabs.com](mailto:matteo.castagnaro@makarenalabs.com)
+- **Brixhilda Koci**: [brixhilda.koci@makarenalabs.com](mailto:brixhilda.koci@makarenalabs.com)
+- **Enrico Giordano**: [enrico.giordano@makarenalabs.com](mailto:enrico.giordano@makarenalabs.com)
 
