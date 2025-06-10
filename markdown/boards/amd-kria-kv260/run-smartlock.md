@@ -6,6 +6,9 @@ explained how to run the example on the AMD Kria&trade; KV260 board.
 Before to run the SmartLock Core software, you have to populate the database of the users faces' features with the faces
 you want to be recognized. Otherwise, the sofware still correctly running, but not recognizing anyone as expected.
 
+**Note**: the very first time you run the code after a board start up, the command could take 1 minutes or more to execute. This behaviour
+is completely normal because the system has to load all the AI models.
+
 ## Populate Faces' Features Database
 
 The first step is to add the features of your face to the database. You can do that using the `take-a-pic` tool.
@@ -29,7 +32,7 @@ Before starting the execution, verify that the camera is correctly connected via
 
 5. You should now see a new line on the terminal asking to insert the name of the file.
 
-6. Please insert it _**without**_ the file extension (i.e. _guglielmo_, not _guglielmo.png_).
+6. Please insert it _**without**_ the file extension (i.e. _your_name_, not _your_name.png_).
 
 [//]: # (<div style="width: 100%; text-align: center">  )
 
@@ -49,7 +52,7 @@ Let's start with the run of the software.
 
         cd smartlock-core-onsemi/
 
-3. Run the `smartlock.exe` executable without any parameter. An example is:
+3. Run the `smartlock` executable without any parameter. An example is:
 
         ./smartlock_v3.2.0
 
